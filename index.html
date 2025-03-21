@@ -71,6 +71,7 @@
 						<h2>Data Preprocessing.</h2>
 					</header>
 					<p>We plan to drop rows that mostly contain NULL values. For rows with only a few null values, we will be replacing them with the average value in that column to maintain the info stored in the other non-empty columns of that row.</p>	
+					<p>Moreover, we drop irrelevant columns to ensure that the data only has relevant columns. Examples of relevant columns include: total bill per kWh, common price of pump gas, and volume for non-trucks/motorcycles.</p>	
 					<p>The Pump Prices data from 2020 to 2023 does not contain the summary information unlike the more recent datasets. Hence we plan to first convert the entire table into a CSV. This will give us the raw data of gas prices from every city in the NCR. Afterwards, we will then summarize the datas in these CSV files to keep consistent with the summarized data from 2024 and 2025.</p>
 
 					<div class="row aln-center">
