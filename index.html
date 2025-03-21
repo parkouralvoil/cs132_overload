@@ -66,6 +66,12 @@
 						<p>We then made our own scraper to convert the PDF tables from the Pump Prices website into CSV files. This currently only includes data from every week in 2024 up until 2025, but we plan to include data from 2020 up to 2023 as well for this dataset.</p>	
 						<p>Lastly, we manually compiled the data from MMDA - Annual Average Daily Traffic, and the Vehicle and License Registrations. This dataset only has data for years 2012 to 2023.</p>
 					  </div>
+					
+					<header>
+						<h2>Data Preprocessing.</h2>
+					</header>
+					<p>We plan to drop rows that mostly contain NULL values. For rows with only a few null values, we will be replacing them with the average value in that column to maintain the info stored in the other non-empty columns of that row.</p>	
+					<p>The Pump Prices data from 2020 to 2023 does not contain the summary information unlike the more recent datasets. Hence we plan to first convert the entire table into a CSV. This will give us the raw data of gas prices from every city in the NCR. Afterwards, we will then summarize the datas in these CSV files to keep consistent with the summarized data from 2024 and 2025.</p>
 
 					<div class="row aln-center">
 						<div class="col-4 col-6-medium col-12-small">
