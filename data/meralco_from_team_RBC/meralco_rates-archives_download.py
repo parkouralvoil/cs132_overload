@@ -21,10 +21,10 @@ doctypes = {
 }
 
 # TODO: years must be adjusted when new data is added
-for year in range(2009, 2024+1):
+for year in range(2024, 2024+1):
     os.system(f"mkdir {year}")
 
-for i in range(0, 88):
+for i in range(1, 12):
     print(f"FILE: {i}.html")
     html = open(f"{i}.html").read()
     start = html.find("<table")
@@ -39,19 +39,18 @@ for i in range(0, 88):
         _empty, period, doctype, link = entry.split("<td")
         print(period, doctype,link, sep="\n")
 
+        doctype_start = doctype.rfind('">') + len('">')
+        doctype_end = doctype.rfind('</span>')
+        doctype = doctype[doctype_start:doctype_end].strip()
+
+        if doctype != "Typical Consumption Level":
+            continue
+
         period_start = period.find('">') + len('">')
         period_end = period.find('</td>', period_start)
         month, year = map(lambda x: x.strip().lower(), period[period_start:period_end].strip().split(" "));
 
         month = months.index(month) + 1
-
-        doctype_start = doctype.rfind('">') + len('">')
-        doctype_end = doctype.rfind('</span>')
-        doctype = doctype[doctype_start:doctype_end].strip()
-
-        # HACK: some tables list Typical Consumption Levels. Remove the 's' for consistency
-        if (doctype.endswith("Levels")):
-            doctype = doctype[:-1]
 
         link_start = link.find('"https:') + 1
         link_end = link.rfind('.pdf"') + len('.pdf')
