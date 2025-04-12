@@ -17,7 +17,7 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
     ]
     
     for filename in glob.glob(os.path.join(input_directory, "petro_ncr_*.csv")):
-        output_filename = filename.removeprefix("doe_csvs\\old_format\\2023\\")
+        output_filename = filename.removeprefix(f"doe_csvs\\old_format\\{YEAR}\\")
         output_path = os.path.join(f"doe_csvs\\{YEAR}", output_filename)
         df = pd.read_csv(filename) # Read the CSV file
 
@@ -55,7 +55,14 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
                 if min_price != 999: min_prices.append(min_price)
                 if max_price != -999: max_prices.append(max_price)
                 if not pd.isna(common_price): common_prices.append(common_price)
+            
+                if max_price > 1000:
+                    print(f"POSSIBLE ERROR AT {filename}")
 
+            for c in range(len(common_prices)):
+                if type(common_prices[c]) == str:
+                    common_prices[c] = float(common_prices[c])
+            print(common_prices)
             results.append({
                 'Product': product,
                 'Overall Range Min': min(min_prices) if len(min_prices) > 0 else "#N/A",
@@ -72,7 +79,7 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
         print(f"saved to {output_path}")
         summary_df.to_csv(output_path, index=False)
 
-YEAR: str = "2023"
+YEAR: str = "2020"
 
 if __name__ == "__main__":
     dirs = "doe_csvs\\old_format"  # Replace with the actual directory containing your CSV files

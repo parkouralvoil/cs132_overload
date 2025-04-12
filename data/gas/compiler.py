@@ -68,8 +68,8 @@ def get_match(filename: str):
 if __name__ == "__main__":
     dirs = "doe_csvs"  # Replace with the actual directory containing your CSV files
     for dir in os.listdir(dirs):
-        if dir != "2025":
+        if dir != "2023":
             continue
         year_folder = os.path.join(dirs, dir)
-        output_filename = f"compiled_petrol_data_{dir}.csv"
+        output_filename = f"compiled_csvs\\compiled_petrol_data_{dir}.csv"
         compile_csvs(year_folder, output_filename)
