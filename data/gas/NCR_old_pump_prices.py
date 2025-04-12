@@ -93,35 +93,19 @@ def clean_text(text: str) -> str:
 
 
 if __name__ == "__main__":
-    raw_data = "doe_pdfs\\old_format_resized"
+    raw_data = "doe_pdfs\\old_format"
     for folder in os.listdir(raw_data):
         year_folder = os.path.join(raw_data, folder)
-        if not ("2022" in year_folder): ## choose specific year
+        if not ("2020" in year_folder): ## choose specific year
             continue
         for filename in os.listdir(year_folder):
             pdf_file =  os.path.join(year_folder, filename)
             output_path = f"doe_word\\{folder}\\{filename.replace(".pdf", ".docx")}"
             if not ("ncr" in filename): ## only convert NCR data
                 continue
+            if os.path.exists(output_path):
+                continue
             if os.path.exists(pdf_file):
                 open_pdf_in_word(pdf_file, output_path, filename)
             else:
                 print(f"Error: PDF file '{pdf_file}' not found.")
-
-
-"""
-2023:
-mar-31
-jul-28
-jul-14
-jul-07
-jan-20
-jan-12
-
-must be set to
-297 x 210 mm
-or
-2480 x 3508 pixels
-
-2022:
-"""
