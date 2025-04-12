@@ -65,11 +65,11 @@ def get_match(filename: str):
     return match
 
 
-# Example usage:
-dirs = "doe_csvs"  # Replace with the actual directory containing your CSV files
-for dir in os.listdir(dirs):
-    if dir != "2025":
-        continue
-    year_folder = os.path.join(dirs, dir)
-    output_filename = f"compiled_petrol_data_{dir}.csv"
-    compile_csvs(year_folder, output_filename)
+if __name__ == "__main__":
+    dirs = "doe_csvs"  # Replace with the actual directory containing your CSV files
+    for dir in os.listdir(dirs):
+        if dir != "2025":
+            continue
+        year_folder = os.path.join(dirs, dir)
+        output_filename = f"compiled_petrol_data_{dir}.csv"
+        compile_csvs(year_folder, output_filename)

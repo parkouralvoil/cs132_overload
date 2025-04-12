@@ -26,7 +26,7 @@ def extract_petroleum_table(pdf_path: str, pdf_name: str):
                 if 'prevailing retail prices of petroleum products ncr' in cols[0]:
                     target_table = table
                     break  # Found the table
-                print(cols)
+                #print(cols)
 
         if target_table is None:
             #if not isinstance(first_table, pd.DataFrame): ## 2020 to 2023
@@ -66,17 +66,18 @@ def save_to_csv(table: pd.DataFrame, pdf_name: str) -> None:
     table.to_csv(output_csv_path, index=False, encoding='utf-8-sig')
     print(f"Petroleum price table extracted and saved to '{output_csv_path}'")
 
-# Example Usage
-raw_data = "doe_pdfs"
-for folder in os.listdir(raw_data):
-    year_folder = os.path.join(raw_data, folder)
-    if not ("2023" in year_folder): ## choose specific year
-        continue
-    for filename in os.listdir(year_folder):
-        pdf_file =  os.path.join(year_folder, filename)
-        if not ("ncr" in filename): ## only convert NCR data
+
+if __name__ == "__main__":
+    raw_data = "doe_pdfs"
+    for folder in os.listdir(raw_data):
+        year_folder = os.path.join(raw_data, folder)
+        if not ("2023" in year_folder): ## choose specific year
             continue
-        if os.path.exists(pdf_file):
-            extract_petroleum_table(pdf_file, filename)
-        else:
-            print(f"Error: PDF file '{pdf_file}' not found.")
+        for filename in os.listdir(year_folder):
+            pdf_file =  os.path.join(year_folder, filename)
+            if not ("ncr" in filename): ## only convert NCR data
+                continue
+            if os.path.exists(pdf_file):
+                extract_petroleum_table(pdf_file, filename)
+            else:
+                print(f"Error: PDF file '{pdf_file}' not found.")
