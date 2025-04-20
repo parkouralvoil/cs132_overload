@@ -17,20 +17,16 @@ def compile_csvs(directory: str, output_filename: str):
         match = get_match(filename)
         if match:
             date_str = match.group(1)
-            end_date = match.group(2)
 
             date_str = date_str.replace("_", "-")
             try:
                 date_obj = pd.to_datetime(date_str)
                 year = date_obj.year
                 start_date = date_obj.strftime("%Y-%m-%d")
-                end_date_obj: pd.Timestamp = date_obj + pd.Timedelta(days=6)
-                end_date = end_date_obj.strftime("%Y-%m-%d") # Assuming the date is the same for start and end for simplicity
 
                 df = pd.read_csv(filename)
                 df["Year"] = year
-                df["StartDate"] = start_date
-                df["EndDate"] = end_date
+                df["Date"] = start_date
 
                 all_data.append(df)
             except ValueError:
@@ -41,34 +37,45 @@ def compile_csvs(directory: str, output_filename: str):
 
     if all_data:
         combined_df = pd.concat(all_data, ignore_index=True)
-        combined_df = combined_df[["Year", "StartDate", "EndDate", "Product", "Overall Range Min", "Overall Range Max", "Common Price"]]
+        combined_df = combined_df[["Year", "Date", "Product", "Overall Range Min", "Overall Range Max", "Common Price"]]
         combined_df.to_csv(output_filename, index=False)
         print(f"Successfully compiled CSVs into {output_filename}")
     else:
         print("No matching CSV files found.")
 
 def get_match(filename: str):
-    match = re.search(r"petro_ncr_(\d{4}-\w{3}-\d{1,2})-(\d{1,2})(_\d+)?\.csv", filename)
+    # 1. Pattern for<ctrl3348>_month_DD_digit.csv
+    match = re.search(r"petro_ncr_(\d{4}_\w+_\d{1,2})_(\d+)\.csv", filename)
     if not match:
-        match = re.search(r"petro_ncr_(\d{4}-\w{3}-\d{1,2})-(\w{3}-\d{1,2})(_\d+)?\.csv", filename)
+        # 2. Pattern for<ctrl3348>_month_DD.csv (new format with full month name)
+        match = re.search(r"petro_ncr_(\d{4}_\w+_\d{1,2})\.csv", filename)
     if not match:
+        # 3. Pattern for<ctrl3348>-mmm-DD_digit.csv
+        match = re.search(r"petro_ncr_(\d{4}-\w{3}-\d{1,2})_(\d+)\.csv", filename)
+    if not match:
+        # 4. Pattern for<ctrl3348>-mmm-DD.csv
+        match = re.search(r"petro_ncr_(\d{4}-\w{3}-\d{1,2})\.csv", filename)
+    if not match:
+        # 5. Pattern for<ctrl3348>_mmm_DD.csv
+        match = re.search(r"petro_ncr_(\d{4}_\w{3}_\d{1,2})\.csv", filename)
+    if not match:
+        # 6. Pattern for<ctrl3348>-MM-DD.csv
+        match = re.search(r"petro_ncr_(\d{4}-\d{2}-\d{2})\.csv", filename)
+    if not match:
+        # 8. More general pattern with optional suffix
+        match = re.search(r"petro_ncr_(\d{4}[_-]\w{3}-\d{1,2})(-.+)?\.csv", filename)
+    if not match:
+        # 9. Older patterns (keeping them for broad compatibility)
         match = re.search(r"petro_ncr_(\d{4}-\w{3}-\d{1,2})(_\d+)?\.csv", filename)
-    
-    if not match:
-        match = re.search(r"petro_ncr_(\d{4}_\w{3}-\d{1,2})-(\d{1,2})(_\d+)?\.csv", filename)
-    if not match:
-        match = re.search(r"petro_ncr_(\d{4}_\w{3}-\d{1,2})-(\w{3}-\d{1,2})(_\d+)?\.csv", filename)
     if not match:
         match = re.search(r"petro_ncr_(\d{4}_\w{3}-\d{1,2})(_\d+)?\.csv", filename)
-
-
     return match
 
 
 if __name__ == "__main__":
     dirs = "doe_csvs"  # Replace with the actual directory containing your CSV files
     for dir in os.listdir(dirs):
-        if dir != "2023":
+        if dir != "2020":
             continue
         year_folder = os.path.join(dirs, dir)
         output_filename = f"compiled_csvs\\compiled_petrol_data_{dir}.csv"
