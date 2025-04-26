@@ -30,7 +30,7 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
         rows_per_city = 7  # Each product has 7 rows in the original data
         cities = df['City'].nunique()
 
-        for p, product in enumerate(products):
+        for p, product in enumerate(products, 1):
             min_prices = []
             max_prices = []
             common_prices = []
@@ -42,15 +42,11 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
                     print(df)
                     pd.reset_option('display.max_rows')
                     exit()
-                if product == "Gasoline (RON97/100)":
-                    next_idx: int = idx + 1
-                    min_price = df.at[next_idx, 'Min Price']
-                    max_price = df.at[next_idx, 'Max Price']
-                    common_price = df.at[next_idx, 'Common Price']
-                else:
-                    min_price = df.at[idx, 'Min Price']
-                    max_price = df.at[idx, 'Max Price']
-                    common_price = df.at[idx, 'Common Price']
+                print(df.at[idx, 'Product'])
+                exit()
+                min_price = df.at[idx, 'Min Price']
+                max_price = df.at[idx, 'Max Price']
+                common_price = df.at[idx, 'Common Price']
                 
                 if not pd.isna(min_price): min_prices.append(min_price)
                 if not pd.isna(max_price): max_prices.append(max_price)

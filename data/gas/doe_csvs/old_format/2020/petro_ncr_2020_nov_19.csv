@@ -1,36 +1,36 @@
-City,Min Price,Max Price,Common Price
-Caloocan City,#N/A,#N/A,#N/A
-Caloocan City,47.95,51.70,#N/A
-Caloocan City,40.65,51.58,51.58
-Caloocan City,39.65,50.58,50.58
-Caloocan City,30.00,36.85,35.89
-Caloocan City,32.00,38.66,#N/A
-Caloocan City,35.04,37.00,#N/A
-Quezon City,42.15,51.67,#N/A
-Quezon City,41.65,50.05,#N/A
-Quezon City,34.40,53.30,41.80
-Quezon City,32.90,51.50,39.95
-Quezon City,25.20,36.90,30.80
-Quezon City,32.80,37.55,#N/A
-Quezon City,35.44,43.07,#N/A
-Manila,43.80,50.10,#N/A
-Manila,44.80,51.02,51.02
-Manila,41.15,50.10,49.02
-Manila,39.95,49.25,46.05
-Manila,29.65,36.38,34.61
-Manila,33.30,38.30,36.61
-Manila,36.22,39.60,#N/A
-Pasig City,50.87,51.17,#N/A
-Pasig City,51.00,51.27,#N/A
-Pasig City,41.10,50.76,48.87
-Pasig City,40.40,50.11,48.17
-Pasig City,30.45,36.13,35.28
-Pasig City,35.21,37.28,37.28
-Pasig City,36.58,38.37,#N/A
-Taguig Cty,53.05,53.27,#N/A
-Taguig Cty,51.00,53.56,51.00
-Taguig Cty,42.75,51.27,49.00
-Taguig Cty,41.75,51.56,48.25
-Taguig Cty,29.95,38.17,34.95
-Taguig Cty,36.95,37.86,36.95
-Taguig Cty,47.60,47.60,#N/A
+City,Product,Min Price,Max Price,Common Price
+Caloocan City,RON 100,#N/A,#N/A,#N/A
+Caloocan City,RON 97,47.95,51.70,#N/A
+Caloocan City,RON 95,40.65,51.58,51.58
+Caloocan City,RON 91,39.65,50.58,50.58
+Caloocan City,DIESEL,30.00,36.85,35.89
+Caloocan City,DIESEL PLUS,32.00,38.66,#N/A
+Caloocan City,KEROSENE,35.04,37.00,#N/A
+Quezon City,RON 100,42.15,51.67,#N/A
+Quezon City,RON 97,41.65,50.05,#N/A
+Quezon City,RON 95,34.40,53.30,41.80
+Quezon City,RON 91,32.90,51.50,39.95
+Quezon City,DIESEL,25.20,36.90,30.80
+Quezon City,DIESEL PLUS,32.80,37.55,#N/A
+Quezon City,KEROSENE,35.44,43.07,#N/A
+Manila,RON 100,43.80,50.10,#N/A
+Manila,RON 97,44.80,51.02,51.02
+Manila,RON 95,41.15,50.10,49.02
+Manila,RON 91,39.95,49.25,46.05
+Manila,DIESEL,29.65,36.38,34.61
+Manila,DIESEL PLUS,33.30,38.30,36.61
+Manila,KEROSENE,36.22,39.60,#N/A
+Pasig City,RON 100,50.87,51.17,#N/A
+Pasig City,RON 97,51.00,51.27,#N/A
+Pasig City,RON 95,41.10,50.76,48.87
+Pasig City,RON 91,40.40,50.11,48.17
+Pasig City,DIESEL,30.45,36.13,35.28
+Pasig City,DIESEL PLUS,35.21,37.28,37.28
+Pasig City,KEROSENE,36.58,38.37,#N/A
+Taguig Cty,RON 100,53.05,53.27,#N/A
+Taguig Cty,RON 97,51.00,53.56,51.00
+Taguig Cty,RON 95,42.75,51.27,49.00
+Taguig Cty,RON 91,41.75,51.56,48.25
+Taguig Cty,DIESEL,29.95,38.17,34.95
+Taguig Cty,DIESEL PLUS,36.95,37.86,36.95
+Taguig Cty,KEROSENE,47.60,47.60,#N/A
