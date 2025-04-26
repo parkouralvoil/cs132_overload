@@ -1,7 +1,6 @@
 import pandas as pd
 import glob
 import os
-import re
 
 # python -m old_summarizer
 
@@ -43,17 +42,18 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
                     print(df)
                     pd.reset_option('display.max_rows')
                     exit()
-                min_price = df.at[idx, 'Min Price'] if not pd.isna(df.at[idx, 'Min Price']) else 999
-                max_price = df.at[idx, 'Max Price'] if not pd.isna(df.at[idx, 'Max Price']) else -999
-                common_price = df.at[idx, 'Common Price']
                 if product == "Gasoline (RON97/100)":
                     next_idx: int = idx + 1
-                    min_price = min_price if pd.isna(df.at[next_idx, 'Min Price']) else min(min_price, df.at[next_idx, 'Min Price'])
-                    max_price = max_price if pd.isna(df.at[next_idx, 'Max Price']) else max(max_price, df.at[next_idx, 'Max Price'])
-                    common_price = common_price if pd.isna(df.at[next_idx, 'Common Price']) else df.at[next_idx, 'Common Price']
+                    min_price = df.at[next_idx, 'Min Price']
+                    max_price = df.at[next_idx, 'Max Price']
+                    common_price = df.at[next_idx, 'Common Price']
+                else:
+                    min_price = df.at[idx, 'Min Price']
+                    max_price = df.at[idx, 'Max Price']
+                    common_price = df.at[idx, 'Common Price']
                 
-                if min_price != 999: min_prices.append(min_price)
-                if max_price != -999: max_prices.append(max_price)
+                if not pd.isna(min_price): min_prices.append(min_price)
+                if not pd.isna(max_price): max_prices.append(max_price)
                 if not pd.isna(common_price): common_prices.append(common_price)
             
                 if max_price > 1000:
@@ -73,9 +73,9 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
         # Create the summary dataframe
         summary_df = pd.DataFrame(results)
         # Save to new CSV or print
-        if os.path.exists(output_path):
-            print(f"SKIP: already exists for {filename}")
-            continue
+        #if os.path.exists(output_path):
+        #    print(f"SKIP: already exists for {filename}")
+        #    continue
         print(f"saved to {output_path}")
         summary_df.to_csv(output_path, index=False)
 
