@@ -1,9 +1,8 @@
 import os
 import csv
 from docx import Document
-import comtypes.client
 
-# python -m NCR_old_pump_prices
+# python -m NCR_old_prices_get_csv
 
 
 def write_last_three_cols_to_csv(docx_path: str, word_name: str):
@@ -66,7 +65,7 @@ if __name__ == "__main__":
     raw_data = "doe_word"
     for folder in os.listdir(raw_data):
         year_folder = os.path.join(raw_data, folder)
-        if ("2020" in year_folder):
+        if not ("2021" in year_folder):
             continue
         for filename in os.listdir(year_folder):
             word_file =  os.path.join(year_folder, filename)

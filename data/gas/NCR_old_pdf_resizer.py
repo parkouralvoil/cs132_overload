@@ -1,7 +1,7 @@
-import aspose.pdf as ap
 import os
-
 import subprocess
+
+# python -m NCR_old_pdf_resizer
 
 def rescale_pdf_ghostscript(input_path: str, output_path: str, pdf_name: str, resolution=72):
     """
@@ -70,7 +70,7 @@ def main():
     raw_data = "doe_pdfs\\old_format_incompatible"
     for folder in os.listdir(raw_data):
         year_folder = os.path.join(raw_data, folder)
-        if not ("2020" in year_folder): ## choose specific year
+        if not ("2024" in year_folder): ## choose specific year
             continue
         for filename in os.listdir(year_folder):
             pdf_file =  os.path.join(year_folder, filename)

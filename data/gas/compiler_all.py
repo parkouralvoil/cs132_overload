@@ -21,7 +21,7 @@ if __name__ == "__main__":
     all_data = []
 
     for file in csv_files:
-        if file == "compiled_all.csv":
+        if file == "compiled_csvs\\compiled_all.csv":
             continue
         df = pd.read_csv(file)
         all_data.append(df)
@@ -38,6 +38,6 @@ if __name__ == "__main__":
     ).drop(columns=['product_rank'])  # Remove the temporary column
 
     # Save the sorted result
-    combined_df.to_csv('compiled_csvs\\compiled_all.csv', index=False)
+    combined_df.to_csv('compiled_csvs\\compiled_all.csv', index=False, mode='w')
 
     print(f"Successfully combined all CSV files from '{folder_path}' into 'compiled_all.csv'")
