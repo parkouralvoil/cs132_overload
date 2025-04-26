@@ -1,7 +1,7 @@
 Product,Overall Range Min,Overall Range Max,Common Price
-Gasoline (RON97/100),68.3,76.3,78.1
-Gasoline (RON95),68.3,76.3,78.1
-Gasoline (RON91),64.7,74.7,73.11
-Diesel,64.0,73.7,72.11
-Diesel Plus,68.0,75.95,75.58
-Kerosene,72.7,79.35,78.5
+Gasoline (RON97/100),68.3,78.1,78.1
+Gasoline (RON95),64.7,78.39,73.11
+Gasoline (RON91),64.0,77.99,72.11
+Diesel,68.0,77.64,75.58
+Diesel Plus,72.7,80.45,78.5
+Kerosene,77.55,87.7,#N/A

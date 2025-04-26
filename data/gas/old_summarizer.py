@@ -4,7 +4,7 @@ import os
 
 # python -m old_summarizer
 
-def make_summary_table_csv(input_directory: str, output_csv_path: str):
+def make_summary_table_csv(input_directory: str):
     # Group rows into products (7 rows per product based on your example)
     products = [
         'Gasoline (RON97/100)',
@@ -42,8 +42,6 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
                     print(df)
                     pd.reset_option('display.max_rows')
                     exit()
-                print(df.at[idx, 'Product'])
-                exit()
                 min_price = df.at[idx, 'Min Price']
                 max_price = df.at[idx, 'Max Price']
                 common_price = df.at[idx, 'Common Price']
@@ -62,7 +60,7 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
             results.append({
                 'Product': product,
                 'Overall Range Min': min(min_prices) if len(min_prices) > 0 else "#N/A",
-                'Overall Range Max': min(max_prices) if len(max_prices) > 0 else "#N/A",
+                'Overall Range Max': max(max_prices) if len(max_prices) > 0 else "#N/A",
                 'Common Price': round(sum(common_prices)/len(common_prices), 2) if len(common_prices) > 0 else "#N/A",
             })
 
@@ -75,7 +73,7 @@ def make_summary_table_csv(input_directory: str, output_csv_path: str):
         print(f"saved to {output_path}")
         summary_df.to_csv(output_path, index=False)
 
-YEAR: str = "2020"
+YEAR: str = "2023"
 
 if __name__ == "__main__":
     dirs = "doe_csvs\\old_format"  # Replace with the actual directory containing your CSV files
@@ -83,5 +81,4 @@ if __name__ == "__main__":
         if dir != YEAR:
             continue
         year_folder = os.path.join(dirs, dir)
-        output_filename = f"petro_ncr_{dir}.csv"
-        make_summary_table_csv(year_folder, output_filename)
+        make_summary_table_csv(year_folder)
