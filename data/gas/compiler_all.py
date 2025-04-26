@@ -21,7 +21,7 @@ if __name__ == "__main__":
     all_data = []
 
     for file in csv_files:
-        if file == "compiled_csvs\\compiled_all.csv":
+        if "compiled_all" in file or ("monthly" in file):
             continue
         df = pd.read_csv(file)
         all_data.append(df)
