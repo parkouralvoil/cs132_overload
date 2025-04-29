@@ -1,300 +1,204 @@
 <!DOCTYPE HTML>
 <!--
-	Miniport by HTML5 UP
+	Prologue by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>cs 132 Overload</title>
+		<title>Prologue by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Top</a></li>
-					<li><a href="#overview">Overview</a></li>
-					<li><a href="#data">Data</a></li>
-					<li><a href="#methods">Methods</a></li>
-					<li><a href="#results">Results</a></li>
-					<li><a href="#team">Team</a></li>
-				</ul>
-			</nav>
+		<!-- Header -->
+			<div id="header">
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Jane Doe</h1>
+							<p>Hyperspace Engineer</p>
 						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hi. We are <strong>Team Overload</strong>.</h1>
-							</header>
-							<p>And this is our project, <strong>Long term cost efficiency of electric vehicles vs gas vehicles</strong>, With the rising trend of electric vehicles and hybrid cars in the Philippines our project seeks to compare the cost efficiency of these vehicles compared to gas vehicles. We compare prices of fuel, prices of electricity, and the fuel efficiency of gas/electric/hybrid cars. We also consider the traffic present in NCR to determine the average fuel efficiency of these cars.</p>
-							<p>Data Science Team</p>
-							<ul style="list-style-type:none; margin-top:-30px;">
-							  <li>Lanz Conanan, WFW</li>
-							  <li>Joaquin Heffron, WFW</li>
-							  <li>Justin Lidasan, WFW</li>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
 							</ul>
-						</div>
-					</div>
-				</div>
-			</article>
+						</nav>
 
-		<!-- Overview -->
-			<article id="overview" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Here's an overview of our project.</h2>
-					</header>
-					<div class="container" style="text-align: left; color: black">
-						<p>We gathered data from these sites:</p>
-						<ul>
-						  <li><a href="https://mmda.gov.ph/2-uncategorised/3345-freedom-of-information-foi.html?appgw_azwaf_jsc=kw3gB98U3idnmaEr9FxSzvm-jkXXXrbpprVZ-49TUPw" style="color: green; text-decoration: none;">MMDA - Annual Average Daily Traffic, 2012 to 2023</a></li>
-						  <li><a href="https://company.meralco.com.ph/news-and-advisories/rates-archives" style="color: green; text-decoration: none;">MERALCO Rates Archive</a></li>
-						  <li><a href="https://doe.gov.ph/retail-pump-prices-metro-manila" style="color: green; text-decoration: none;">NCR Prevailing Retail Pump Prices | Department of Energy Philippines</a></li>
-						  <li><a href="https://www.foi.gov.ph/agencies/lto/data-request-vehicle-and-license-registrations-2019-2024-lto-007373294787/" style="color: green; text-decoration: none;">Data Request: Vehicle and License Registrations (2019-2024)</a></li>
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
-						<p>We used the code of <a href="https://jmbatrina.github.io/CS132-RBC/" style="color: blue; text-decoration: none;">Team R.B.C from the 2023-2024 iteration of CS 132</a> to scrape the data from the MERALCO Rates Archive website. This includes data from 2010 to 2024. </p>
-						<p>We then made our own scraper to convert the PDF tables from the Pump Prices website into CSV files. This currently only includes data from every week in 2024 up until 2025, but we plan to include data from 2020 up to 2023 as well for this dataset.</p>	
-						<p>Lastly, we manually compiled the data from MMDA - Annual Average Daily Traffic, and the Vehicle and License Registrations. This dataset only has data for years 2012 to 2023.</p>
-					  </div>
-					
-					<header>
-						<h2>Data Preprocessing.</h2>
-					</header>
-					<p>We plan to drop rows that mostly contain NULL values. For rows with only a few null values, we will be replacing them with the average value in that column to maintain the info stored in the other non-empty columns of that row.</p>	
-					<p>Moreover, we drop irrelevant columns to ensure that the data only has relevant columns. Examples of relevant columns include: total bill per kWh, common price of pump gas, and volume for non-trucks/motorcycles.</p>	
-					<p>The Pump Prices data from 2020 to 2023 does not contain the summary information unlike the more recent datasets. Hence we plan to first convert the entire table into a CSV. This will give us the raw data of gas prices from every city in the NCR. Afterwards, we will then summarize the datas in these CSV files to keep consistent with the summarized data from 2024 and 2025.</p>
 
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-camera-retro"></span>
-								<h3>Research Questions</h3>
-								<ol>
-									<li>What is the trend of the costs of kilowatt-hours per kilometer VS kilometer per gallon given the gas and electricity prices in the Philippines (NCR)?</li>
-									<li>How will the greenhouse gas emissions (NCR) of gas vehicles change as more and more EVs replace gas vehicles overtime?</li>
-								</ol>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-comments"></span>
-								<h3>Hypothesis</h3>
-								<ul>
-									<li>Null: Automobile power source has no effect on cost efficiency</li>
-									<li>Alternative: Automobile power source has an effect on cost efficiency</li>
-								</ul>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-thumbs-up"></span>
-								<h3>Solution</h3>
-								<p>WIP</p>
-							</section>
-						</div>
-					</div>
-					<footer>
-						<p>Our compiled datasets can be seen in this Google Sheets:</p>
-						<a href="https://docs.google.com/spreadsheets/d/1fwAkqhLW1Ity1jQuW_FSuACYamU8oPEINvl079Cubdk/edit?usp=sharing" class="button large scrolly">Google Sheets</a>
-					</footer>
 				</div>
-			</article>
 
-		<!-- Data -->
-			<article id="data" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>WIP.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Topic</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Keywords</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Tools</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-					</footer>
-				</div>
-			</article>
+			</div>
 
-			<!-- Methods -->
-			<article id="methods" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Let's talk about our data science methodology WIP.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
-					</header>
-					<div class="row">
-						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Data Preprocessing</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Machine Learning</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-					</footer>
-				</div>
-			</article>
+		<!-- Main -->
+			<div id="main">
 
-			<!-- Results -->
-			<article id="results" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Here's what we found out WIP.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
-					</header>
-					<div class="row">
-						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Results</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Results</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-					</div>
-					<footer>
-						<p>Want to learn more? Take a look at our source codes.</p>
-						<a href="https://github.com/parkouralvoil/cs132_overload" class="button large scrolly">Github Repo</a>
-					</footer>
-				</div>
-			</article>
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
 
-		<!-- Team -->
-			<article id="team" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2>We'd like to hear from you.</h2>
-						<p>You can add more information about the team members here.</p>
-					</header>
-					<div class="row">
-						<div class="col-12">
+							<header>
+								<h2 class="alt">Hi! I'm <strong>Prologue</strong>, a <a href="http://html5up.net/license">free</a> responsive<br />
+								site template designed by <a href="http://html5up.net">HTML5 UP</a>.</h2>
+								<p>Ligula scelerisque justo sem accumsan diam quis<br />
+								vitae natoque dictum sollicitudin elementum.</p>
+							</header>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+
+							<p>Vitae natoque dictum etiam semper magnis enim feugiat convallis convallis
+							egestas rhoncus ridiculus in quis risus amet curabitur tempor orci penatibus.
+							Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis
+							fusce hendrerit lacus ridiculus.</p>
+
+							<div class="row">
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+										<header>
+											<h3>Ipsum Feugiat</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+										<header>
+											<h3>Rhoncus Semper</h3>
+										</header>
+									</article>
+								</div>
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+										<header>
+											<h3>Magna Nullam</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+										<header>
+											<h3>Natoque Vitae</h3>
+										</header>
+									</article>
+								</div>
+								<div class="col-4 col-12-mobile">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+										<header>
+											<h3>Dolor Penatibus</h3>
+										</header>
+									</article>
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+										<header>
+											<h3>Orci Convallis</h3>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+
+							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
+							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
+							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
+							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
+							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
+							ornare iaculis.</p>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p>Elementum sem parturient nulla quam placerat viverra
+							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
+							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+
 							<form method="post" action="#">
 								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
+									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="col-12">
+										<textarea name="message" placeholder="Message"></textarea>
 									</div>
 									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
+										<input type="submit" value="Send Message" />
 									</div>
 								</div>
 							</form>
+
 						</div>
-						<div class="col-12">
-							<hr />
-							<h3>Find me on ...</h3>
-							<ul class="social">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-								<li><a href="https://github.com/parkouralvoil/cs132_overload" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-							</ul>
-							<hr />
-						</div>
-					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-				</div>
-			</article>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
