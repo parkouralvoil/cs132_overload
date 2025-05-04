@@ -1,0 +1,32 @@
+Category,Model,Combined (km/L)
+ICE,Toyota Vios,15
+ICE,Toyota Hilux,10.3
+ICE,Mitsubishi Mirage G4,15.7
+ICE,Mitsubishi Xpander,21.975
+ICE,Toyota Wigo,19
+ICE,Toyota Raize,17.5
+ICE,Toyota Innova,15.5
+ICE,Toyota Avanza,17.4
+ICE,Toyota Hiace,12.5
+ICE,Mitsubishi L300,15.43
+Hybrid,BYD Sealion 6 DM-i (PHEV) using gas,18.33
+Hybrid,Nissan Kicks e-POWER (HEV),20.3
+Hybrid,Honda CR-V RS e:HEV,19.6
+Hybrid,MG3 Hybrid+ (Series-Parallel HEV),16
+Hybrid,Hyundai Tucson HEV,15.6
+Hybrid,GWM Haval H6 HEV,16.8
+Hybrid,Toyota Corolla Altis Hybrid,21.7
+Hybrid,Honda Civic Hybrid,20
+Hybrid,Suzuki Ertiga Hybrid,17.2
+Hybrid,Suzuki XL7 Hybrid,14
+BEV,BYD Sealion 6 DM-i (PHEV) using electricity,9.5
+BEV,BYD Atto 3,5.464480874
+BEV,BYD Seagull,10
+BEV,BYD Dolphin,5.917159763
+BEV,BYD T3,4.970178926
+BEV,BYD Seal,5.405405405
+BEV,BYD Han,5.555555556
+BEV,BYD Tang,4.219409283
+BEV,MG ZS EV,5.405405405
+BEV,Nissan Leaf,6.024096386
+BEV,Hyundai Kona Electric,6.097560976
