@@ -26,7 +26,7 @@
 			<!-- Logo -->
 			<div id="logo">
 				<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-				<h1 id="title">Team Oveload</h1>
+				<h1 id="title">Team Overload</h1>
 				<p>CS 132, 2425-B</p>
 			</div>
 
@@ -65,14 +65,10 @@
 			<div class="container">
 
 				<header>
-					<h2>Hi. We are <strong>Team Overload</strong>.</h2>
-					<p>And this is our topic: <strong>Long term cost efficiency of electric vehicles vs gas
-							vehicles</strong></p>
+					<h2>Plug In or Pump Up?</h2>
+					<p>Comparing the long term cost efficiency of electric vehicles vs gas vehicles in the context of
+						the Philippines</p>
 				</header>
-
-				<footer>
-					<a href="#overview" class="button scrolly">Magna Aliquam</a>
-				</footer>
 
 			</div>
 		</section>
@@ -84,9 +80,212 @@
 				<header>
 					<h2>Overview</h2>
 				</header>
-				
-				<iframe src="data/graphs/electricity_cost_400kWh.html" width="950" height="600" frameborder="0"></iframe>
+
+				<p>Growing interest in Hybrid Electric Vehicles (HEVs) in the Philippines stems from their advertised
+					fuel efficiency in urban environments compared to conventional gasoline cars. The Philippine
+					government's EVIDA, offering excise tax exemptions, underscores this focus on electric mobility. Our
+					analysis investigates the cost-effectiveness of HEVs versus EVs in the National Capital Region
+					(NCR), considering prevailing fuel prices and Meralco electricity rates, and how major events and
+					subsidies influence these costs.
+				</p>
+
+				<h3>Background</h3>
+				<p>On April 15, 2022, the Philippines enacted the Electric Vehicle Industry Development Act (EVIDA) to
+					reduce the country's reliance on imported fossil fuels for transportation, support clean energy, and
+					foster industrialization<sup>1</sup>. This act encourages the use of Electric cars (EVs) by
+					providing benefits such as:</p>
+
+				<ul>
+					<li>exemption from number coding schemes<sup>2</sup></li>
+					<li>discounts for the Motor Vehicle User's Charge (MVUC) for 8 years<sup>3</sup></li>
+					<li>priority registration of special EV license plates<sup>3</sup></li>
+				</ul>
+
+				<hr>
+				<p><strong>References:</strong>
+					<a href="https://abolawfirm.ph/making-the-switch-an-overview-of-evida/"
+						style="color: green; text-decoration: none;">1</a>
+					,
+					<a href="https://www.manilatimes.net/2023/12/30/legal-advice/electric-vehicles-exempted-from-number-coding-scheme/1926105"
+						style="color: green; text-decoration: none;">2</a>
+					,
+					<a href="https://www.dof.gov.ph/recto-approval-of-expanded-electric-vehicle-incentive-program-will-enhance-ease-of-doing-business-advance-phs-climate-ambitions-and-generate-more-green-jobs-for-filipinos/"
+						style="color: green; text-decoration: none;">3</a>
+				</p>
+
+				<h3>Problem</h3>
+				<p>
+					Electric vehicles, powered by electric motors, generally boast superior fuel efficiency compared to
+					traditional gasoline cars relying on internal combustion engines (ICEs). This might lead one to
+					conclude a simple equation: EVs are better than ICEs. However, the landscape shifts when considering
+					vehicles that blend these technologies. Hybrid electric cars (HEVs) enter the picture, with most
+					using gasoline to generate power for their electric motors (and often incorporating both an electric
+					motor and a combustion engine).
+
+					<br><br>
+
+					Furthermore, some hybrid models offer the flexibility of external charging, much like pure electric
+					cars; these are known as Plug-In Hybrid Electric Vehicles (PHEVs). HEVs are often marketed for their
+					improved fuel economy over conventional ICE vehicles. This raises the question: how do they compare
+					against fully electric vehicles in terms of cost-effectiveness? Are there scenarios where gasoline
+					becomes significantly more economical than electricity, for instance, during periods of high
+					electricity demand and potentially higher rates, like the dry season in the Philippines? Considering
+					the current limitations in public EV charging infrastructure within the Philippines, our cost
+					comparison will focus on home-based EV charging using Meralco rates versus the cost of refueling
+					HEVs at gasoline stations within the National Capital Region (NCR).
+				</p>
+
+
+				<h3>Research Questions</h3>
+				<ol style="background-color: #d9e9f6; /* AliceBlue */
+				padding: 50px;
+				border-radius: 10px;
+				border: 1px solid #000000;">
+					<li>
+						Are there specific months where using a gasoline car is more cost-effective than an electric car
+						charged at home? If so, which months?
+					</li>
+					<li>
+						What are the projected trends in Meralco electricity rates and gasoline prices from now until
+						2026?
+					</li>
+				</ol>
+
+				<h3>Hypothesis</h3>
+				<ul style="background-color: #b9edc7; /* AliceBlue */
+				padding: 50px;
+				border-radius: 10px;
+				border: 1px solid #000000;">
+					<li>
+						Null: There is no significant difference between the time of the year and the price of gas and
+						electricity for a car to drive 1 km under ideal driving conditions.
+					</li>
+					<li>
+						Alternative: There is a significant difference between the time of the year and the price of gas
+						and electricity for a car to drive 1 km under ideal driving conditions.
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Data -->
+		<section id="data" class="two">
+			<div class="container">
+
+				<header>
+					<h2>Data</h2>
+				</header>
+
+				<p>We gathered msot of our data from these sites:</p>
+				<ul>
+					<li><a href="https://company.meralco.com.ph/news-and-advisories/rates-archives"
+							style="color: green; text-decoration: none;">MERALCO Rates Archive</a>
+					</li>
+					<li><a href="https://doe.gov.ph/retail-pump-prices-metro-manila"
+							style="color: green; text-decoration: none;">NCR Prevailing Retail Pump Prices | Department
+							of Energy Philippines</a>
+					</li>
+				</ul>
+				<p>
+					We used the code of <a href="https://jmbatrina.github.io/CS132-RBC/"
+						style="color: blue; text-decoration: none;">Team R.B.C from the 2023-2024 iteration of CS
+						132</a> to scrape the data from the MERALCO Rates Archive website. This includes data from 2010
+					to 2024.
+
+				</p>
+
+				<p>
+					Our compiled datasets can be seen in this Google Sheets:
+				</p>
+				<a href="https://docs.google.com/spreadsheets/d/1fwAkqhLW1Ity1jQuW_FSuACYamU8oPEINvl079Cubdk/edit?usp=sharing"
+					class="button large scrolly">Datasets</a>
+			</div>
+		</section>
+
+		<!-- Methods -->
+		<section id="methods" class="three">
+			<div class="container">
+
+				<header>
+					<h2>Methods</h2>
+				</header>
+
+				<h3>Data Preprocessing</h3>
+
+				<p>
+					Most of the Meralco data has already been cleaned by Team R.B.C, hence we only needed to preprocess
+					the more recent Meralco Rates. We drop unnecessary columns in the dataset and keep the most relevant
+					ones such as the Total Bill per kWh.
+					<br> <br>
+					The NCR Pump Prices data from 2020 to 2023 does not contain the summary information unlike the more
+					recent datasets. Hence we first converted the entire table into a CSV. This will give us the
+					raw data of gas prices from the cities in the NCR. Moreover, some of the weeks in the dataset are
+					missing. Thus we interpolated the missing weeks to ensure that each entry has a gap of no longer
+					than 10 days from the preceding date. Afterwards, we summarized the datas in
+					these CSV files to keep consistent with the summarized data from 2024 and 2025. As some of the
+					common prices in the gas dataset.
+				</p>
+
+				<h3>Data Visualization</h3>
+
+				We plotted the datasets of the NCR Gas Prices and Meralco Rates and showed the corresponding regression
+				line.
+				<iframe src="data/graphs/gasoline_price_trends.html" width="950" height="600" frameborder="0"></iframe>
+				<iframe src="data/graphs/electricity_cost_400kWh.html" width="950" height="600"
+					frameborder="0"></iframe>
+
+				To compare overall fuel efficiency, we analyzed the average city driving efficiencies of the top 10 ICE,
+				HEV, and EV cars in the Philippines. We primarily used manufacturer-claimed figures for individual car
+				fuel efficiency, with source details available in our dataset sheets. The following boxplot illustrates
+				the fuel efficiency distribution for each vehicle category.
+
+				<iframe src="HEV_vs_EV_bvoxplot_6.23.html" width="950" height="600"
+					frameborder="0"></iframe>
+
+				<h3>Hypothesis Testing</h3>
+				<p>
+					We used the Kruskal-Wallis Test to check for seasonality of the datasets. This is a non-parametric
+					test that compares the medians of two or more groups of data to determine if at least one of the
+					medians are different from the others. In this case, we applied it to the gas prices, meralco rates,
+					and the difference in cost/km from using an avg HEV compared to avg EV. We checked for seasonality
+					by seasons (dry and wet), months, and years.
+				</p>
+
+			</div>
+		</section>
+
+		<!-- Results -->
+		<section id="results" class="three">
+			<div class="container">
+
+				<header>
+					<h2>Results</h2>
+				</header>
+
+				<h3>Cost Comparison: EV vs. HEV per Kilometer</h3>
+				<p>Combining our data, the overall comparison highlights the average cost to drive one kilometer with an
+					electric vehicle (EV) versus a hybrid electric vehicle (HEV). As the graph indicates, the cost of
+					charging an EV consistently remains lower than the gasoline expenses for an HEV.
+				</p>
+
 				<iframe src="data/graphs/gas_vs_electricity.html" width="950" height="600" frameborder="0"></iframe>
+
+				<p>
+					To provide context for the trends in gas and electricity prices, we've also included major events
+					from 2020 to 2024. For
+					instance, the sharp decline in gas prices starting in April 2020 likely correlates with the Luzon
+					ECQ lockdown and reduced vehicle traffic. Similarly, the significant increase in gas costs around
+					March
+					2022 may be attributed to the onset of the Russia-Ukraine War. Finally, the notable drop in
+					electricity
+					costs in June 2024 can be explained by the Energy Regulatory Commission (ERC) Order issued in direct
+					response to the recent surges days with high heat index.
+				</p>
+
+				<h3>Hypothesis Test Results</h3>
+				The test shows that the data only yearly seasonality is statistically significant. Hence we fail to
+				reject the first null hypothesis in that the time of the year has a significant effect on the cost
+				difference from using HEV vs EV. However, the yearly seasonality implies… WIP
 
 				<table border="1" class="dataframe">
 					<thead>
@@ -138,139 +337,22 @@
 							<td>Year</td>
 							<td>Gas Avg Price</td>
 							<td>45.4962</td>
-							<td>3.135e-09</td>
+							<td><u>3.135e-09</u></td>
 						</tr>
 						<tr style="background-color: #f5f5dc;">
 							<td>Year</td>
 							<td>Meralco Rates</td>
 							<td>48.6689</td>
-							<td>6.8455e-10</td>
+							<td><u>6.8455e-10</u></td>
 						</tr>
 						<tr style="background-color: #f5f5dc;">
 							<td>Year</td>
 							<td>Gas VS Electricity Cost/km Difference</td>
 							<td>35.0650</td>
-							<td>4.5046e-07</td>
+							<td><u>4.5046e-07</u></td>
 						</tr>
 					</tbody>
 				</table>
-
-				<p>
-					With the rising trend of electric vehicles and hybrid cars in the Philippines our project seeks to
-					compare the cost efficiency of these vehicles compared to gas vehicles. We compare prices of fuel,
-					prices of electricity, and the fuel efficiency of gas/electric/hybrid cars. We also consider the
-					traffic present in NCR to determine the average fuel efficiency of these cars.</p>
-
-				<h3>Research Questions</h3>
-				<ol>
-					<li>
-						What is the trend of the costs of kilowatt-hours per kilometer VS kilometer per gallon given the
-						gas and electricity prices in the Philippines (NCR)?
-					</li>
-					<li>
-						How will the greenhouse gas emissions (NCR) of gas vehicles change as more and more EVs replace
-						gas vehicles overtime?
-					</li>
-				</ol>
-
-				<h3>Hypothesis</h3>
-				<ul>
-					<li>
-						Null: Automobile power source has no effect on cost efficiency
-					</li>
-					<li>
-						Alternative: Automobile power source has an effect on cost efficiency
-					</li>
-				</ul>
-			</div>
-		</section>
-
-		<!-- Data -->
-		<section id="data" class="two">
-			<div class="container">
-
-				<header>
-					<h2>Data</h2>
-				</header>
-
-				<p>We gathered data from these sites:</p>
-				<ul>
-					<li><a href="https://mmda.gov.ph/2-uncategorised/3345-freedom-of-information-foi.html?appgw_azwaf_jsc=kw3gB98U3idnmaEr9FxSzvm-jkXXXrbpprVZ-49TUPw"
-							style="color: green; text-decoration: none;">MMDA - Annual Average Daily Traffic, 2012 to
-							2023</a>
-					</li>
-					<li><a href="https://company.meralco.com.ph/news-and-advisories/rates-archives"
-							style="color: green; text-decoration: none;">MERALCO Rates Archive</a>
-					</li>
-					<li><a href="https://doe.gov.ph/retail-pump-prices-metro-manila"
-							style="color: green; text-decoration: none;">NCR Prevailing Retail Pump Prices | Department
-							of Energy Philippines</a>
-					</li>
-					<li><a href="https://www.foi.gov.ph/agencies/lto/data-request-vehicle-and-license-registrations-2019-2024-lto-007373294787/"
-							style="color: green; text-decoration: none;">Data Request: Vehicle and License Registrations
-							(2019-2024)</a>
-					</li>
-				</ul>
-				<p>
-					We used the code of <a href="https://jmbatrina.github.io/CS132-RBC/"
-						style="color: blue; text-decoration: none;">Team R.B.C from the 2023-2024 iteration of CS
-						132</a> to scrape the data from the MERALCO Rates Archive website. This includes data from 2010
-					to 2024.
-					<br>
-					We then made our own scraper to convert the PDF tables from the Pump Prices website into CSV files.
-					This currently only includes data from every week in 2024 up until 2025, but we plan to include data
-					from 2020 up to 2023 as well for this dataset.
-					<br>
-					Lastly, we manually compiled the data from MMDA - Annual Average Daily Traffic, and the Vehicle and
-					License Registrations. This dataset only has data for years 2012 to 2023.
-				</p>
-
-				<h3>Data Preprocessing</h3>
-
-				<p>
-					We plan to drop rows that mostly contain NULL values. For rows with only a few null values, we will
-					be replacing them with the average value in that column to maintain the info stored in the other
-					non-empty columns of that row. Moreover, we drop irrelevant columns to ensure that the data only has
-					relevant columns. Examples of relevant columns include: total bill per kWh, common price of pump
-					gas, and volume for non-trucks/motorcycles.
-					<br>
-					The Pump Prices data from 2020 to 2023 does not contain the summary information unlike the more
-					recent datasets. Hence we plan to first convert the entire table into a CSV. This will give us the
-					raw data of gas prices from every city in the NCR. Afterwards, we will then summarize the datas in
-					these CSV files to keep consistent with the summarized data from 2024 and 2025.
-				</p>
-
-				<p>
-					Our compiled datasets can be seen in this Google Sheets:
-				</p>
-				<a href="https://docs.google.com/spreadsheets/d/1fwAkqhLW1Ity1jQuW_FSuACYamU8oPEINvl079Cubdk/edit?usp=sharing"
-					class="button large scrolly">Datasets</a>
-
-			</div>
-		</section>
-
-		<!-- Methods -->
-		<section id="methods" class="three">
-			<div class="container">
-
-				<header>
-					<h2>Methods</h2>
-				</header>
-
-				<p>Lorem.</p>
-
-			</div>
-		</section>
-
-		<!-- Results -->
-		<section id="results" class="three">
-			<div class="container">
-
-				<header>
-					<h2>Results</h2>
-				</header>
-
-				<p>Lorem.</p>
 
 			</div>
 		</section>
@@ -285,7 +367,7 @@
 
 				<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
 
-				<ul style="list-style-type:none; margin-top:-30px;">
+				<ul style="list-style-type:none; margin-top:-10px;">
 					<li>Lanz Conanan, WFW</li>
 					<li>Joaquin Heffron, WFW</li>
 					<li>Justin Lidasan, WFW</li>
@@ -293,36 +375,6 @@
 
 			</div>
 		</section>
-
-		<!-- Contact -->
-		<!-- <section id="contact" class="four">
-						<div class="container">
-
-							<header>
-								<h2>Contact</h2>
-							</header>
-
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<input type="submit" value="Send Message" />
-									</div>
-								</div>
-							</form>
-
-						</div>
-					</section> -->
-
 	</div>
 
 	<!-- Footer -->
