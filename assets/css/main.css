@@ -2785,7 +2785,7 @@ button:active,
 	/* Roughly one-third width with some margin */
 	margin-bottom: 3px;
 	/* Add some space between rows if they wrap */
-	text-align: left;
+	text-align: center;
 	/* Align the text content to the left */
 	background-color: #eedbb2;
 	/* AliceBlue */
@@ -2815,6 +2815,7 @@ button:active,
 	/* Center the image horizontally */
 	margin: 0 auto;
 	/* Center the image horizontally */
+	padding: 24px;
 }
 
 /* Adjust for smaller screens to prevent overflow */
