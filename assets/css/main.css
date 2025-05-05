@@ -2634,3 +2634,48 @@ input, select, textarea {
 				}
 
 	}
+
+	.team-container {
+		display: flex; /* Enable flexbox for horizontal layout */
+		justify-content: space-around; /* Distribute space evenly around the items */
+		flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+	}
+	
+	.team-member {
+		width: calc(33% - 20px); /* Roughly one-third width with some margin */
+		margin-bottom: 10px; /* Add some space between rows if they wrap */
+		text-align: left; /* Align the text content to the left */
+		background-color: #eedbb2; /* AliceBlue */
+		padding: 15px;
+		border-radius: 5px;
+		border: 1px solid #000000;
+	}
+	
+	.team-member ul {
+		padding-left: 0; /* Remove default list padding */
+	}
+	
+	.team-member li {
+		margin-bottom: 5px; /* Add a little space below the name/WFW */
+	}
+
+	.team-member-image {
+		width: 240px; /* Adjust as needed */
+		height: auto;
+		margin-bottom: 10px; /* Space between image and text */
+		display: block; /* Center the image horizontally */
+    	margin: 0 auto;    /* Center the image horizontally */
+	}
+	
+	/* Adjust for smaller screens to prevent overflow */
+	@media (max-width: 768px) {
+		.team-member {
+			width: calc(50% - 10px); /* Two columns on medium screens */
+		}
+	}
+	
+	@media (max-width: 480px) {
+		.team-member {
+			width: 100%; /* One column on small screens */
+		}
+	}
