@@ -37,7 +37,8 @@
 					<li><a href="#data" id="data-link"><span class="icon solid fa-list">Data</span></a></li>
 					<li><a href="#methods" id="methods-link"><span class="icon solid fa-pen">Methods</span></a></li>
 					<li><a href="#results" id="results-link"><span class="icon solid fa-car">Results</span></a></li>
-					<li><a href="#calculator" id="calculator-link"><span class="icon solid fa-calculator">Calculator</span></a>
+					<li><a href="#calculator" id="calculator-link"><span
+								class="icon solid fa-calculator">Calculator</span></a>
 					</li>
 					<li><a href="#conclusion" id="conclusion-link"><span class="icon solid fa-th">Conclusion</span></a>
 					</li>
@@ -319,11 +320,14 @@
 				</p>
 
 				<h3>Hypothesis Test Results</h3>
-				Our hypothesis test revealed statistically significant yearly seasonality in the data. Consequently, we
-				fail to reject the initial null hypothesis, suggesting that the time of year significantly influences
-				the cost difference between HEV and EV usage. This yearly seasonality further indicates a consistent
-				upward trend in both electricity and gas prices over the recent years.
-
+				<p>
+					Our hypothesis test revealed statistically significant yearly seasonality in the data, while the
+					monthly
+					and by season (dry and wet) seasonality were not statistically significant. Hence, we
+					fail to reject the initial null hypothesis, suggesting that the time of year significantly
+					influences
+					the cost difference between HEV and EV usage.
+				</p>
 				<table border="1" class="dataframe">
 					<thead>
 						<tr style="text-align: right;">
@@ -390,6 +394,12 @@
 						</tr>
 					</tbody>
 				</table>
+
+				<p>
+					Looking back at the regression lines of the gas plot and
+					electricity plot, the yearly seasonality indicates a consistent
+					upward trend in both electricity and gas prices over the recent years
+				</p>
 
 				<h3>Machine Learning for Prediction</h3>
 				<p>WIP</p>
