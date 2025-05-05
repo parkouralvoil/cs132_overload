@@ -2643,7 +2643,7 @@ input, select, textarea {
 	
 	.team-member {
 		width: calc(33% - 20px); /* Roughly one-third width with some margin */
-		margin-bottom: 10px; /* Add some space between rows if they wrap */
+		margin-bottom: 3px; /* Add some space between rows if they wrap */
 		text-align: left; /* Align the text content to the left */
 		background-color: #eedbb2; /* AliceBlue */
 		padding: 15px;
@@ -2679,3 +2679,9 @@ input, select, textarea {
 			width: 100%; /* One column on small screens */
 		}
 	}
+
+	.graph {
+		width: 1400px; /* Set your desired width here */
+		height: 750px; /* Set your desired height here */
+		border: 1px solid #000000; 
+	  }
