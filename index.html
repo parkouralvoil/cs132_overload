@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Plug Or Pump</title>
+	<title>Plug In or Pump Up</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
 
 			<!-- Logo -->
 			<div id="logo">
-				<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+				<span class="image light"><img src="images/icons/icon.png" width="30%" height="30%" alt="" /></span>
 				<h1 id="title">Team Overload</h1>
 				<p>CS 132, 2425-B</p>
 			</div>
@@ -33,11 +33,14 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-					<li><a href="#overview" id="overview-link"><span class="icon solid fa-th">Overview</span></a></li>
+					<li><a href="#top" id="top-link"><span class="icon solid fa-home">Overview</span></a></li>
 					<li><a href="#data" id="data-link"><span class="icon solid fa-th">Data</span></a></li>
 					<li><a href="#methods" id="methods-link"><span class="icon solid fa-th">Methods</span></a></li>
 					<li><a href="#results" id="results-link"><span class="icon solid fa-th">Results</span></a></li>
+					<li><a href="#calculator" id="calculator-link"><span class="icon solid fa-th">Calculator</span></a>
+					</li>
+					<li><a href="#conclusion" id="conclusion-link"><span class="icon solid fa-th">Conclusion</span></a>
+					</li>
 					<li><a href="#meet_the_team" id="meet_the_team-link"><span class="icon solid fa-user">Meet the
 								Team</span></a></li>
 				</ul>
@@ -64,9 +67,10 @@
 		<section id="top" class="one dark cover">
 			<div class="container">
 
-				<header>
-					<h2>Plug In or Pump Up?</h2>
-					<p>Comparing the long term cost efficiency of electric vehicles vs gas vehicles in the context of
+				<header class="centered-heading">
+					<h2 span class="text-with-transparent-background">Plug In or Pump Up?</h2>
+					<p span class="text-with-transparent-background">Comparing the long term cost efficiency of electric
+						vehicles vs gas vehicles in the context of
 						the Philippines</p>
 				</header>
 
@@ -86,7 +90,7 @@
 					urban environments compared to conventional gasoline cars.
 					The Philippine government's Electric Vehicle Industry Development
 					Act (EVIDA), offering excise tax exemptions, underscores this
-					focus on electric mobility. Our  analysis investigates the
+					focus on electric mobility. Our analysis investigates the
 					cost-effectiveness of HEVs versus EVs in the National Capital
 					Region (NCR), considering current fuel prices and Meralco
 					electricity rates, and how major events and subsidies influence
@@ -94,6 +98,10 @@
 				</p>
 
 				<h3>Background</h3>
+
+				<div class="background_photo">
+					<img src="images/ev_photo.jpg" alt="DoE photo" class="responsive-image">
+				</div>
 				<p>On April 15, 2022, the Philippines enacted EVIDA to
 					reduce the country's reliance on imported fossil fuels for
 					transportation, support clean energy, and foster
@@ -205,20 +213,20 @@
 						style="color: blue; text-decoration: none;">
 						script</a>
 					from
-					<a href="https://jmbatrina.github.io/CS132-RBC/"
-						style="color: blue; text-decoration: none;">
+					<a href="https://jmbatrina.github.io/CS132-RBC/" style="color: blue; text-decoration: none;">
 						MeralCOST</a>
 					, a project in the 2023-2024 iteration of CS 132, by Team R.B.C.
 					This includes data from 2010 to 2024.
 
 				</p>
-
-				<p>
-					Our compiled datasets can be viewed in a Google Sheet linked below:
-				</p>
-				<a href="https://docs.google.com/spreadsheets/d/1fwAkqhLW1Ity1jQuW_FSuACYamU8oPEINvl079Cubdk/edit?usp=sharing"
-					class="button large scrolly">
+				<div style="text-align: center;">
+					<p>
+						Our compiled datasets can be viewed in a Google Sheet linked below:
+					</p>
+					<a href="https://docs.google.com/spreadsheets/d/1fwAkqhLW1Ity1jQuW_FSuACYamU8oPEINvl079Cubdk/edit?usp=sharing"
+						class="button large scrolly">
 						Datasets</a>
+				</div>
 			</div>
 		</section>
 
@@ -252,8 +260,9 @@
 					Finally, we aggregated the entries to be by month in order to
 					be on par with the Meralco rates.
 
-					WIP
-					As some of the common prices in the gas dataset.
+					To address missing common price data in earlier gas dataset entries, we opted to calculate an
+					average price using the minimum and maximum recorded prices. This average then served as our
+					reference point for the overall comparison.
 				</p>
 
 				<h3>Data Visualization</h3>
@@ -278,7 +287,6 @@
 					and the difference in cost/km from using an avg HEV compared to avg EV. We checked for seasonality
 					by months, seasons (dry and wet), and years.
 				</p>
-
 			</div>
 		</section>
 
@@ -311,11 +319,10 @@
 				</p>
 
 				<h3>Hypothesis Test Results</h3>
-				The hypothesis test shows that the data only yearly seasonality
-				is statistically significant. Hence we fail to reject the first
-				null hypothesis in that the time of the year has a significant
-				effect on the cost difference from using HEV vs EV.
-				However, the yearly seasonality implies… WIP
+				Our hypothesis test revealed statistically significant yearly seasonality in the data. Consequently, we
+				fail to reject the initial null hypothesis, suggesting that the time of year significantly influences
+				the cost difference between HEV and EV usage. This yearly seasonality further indicates a consistent
+				upward trend in both electricity and gas prices over the recent years.
 
 				<table border="1" class="dataframe">
 					<thead>
@@ -384,6 +391,33 @@
 					</tbody>
 				</table>
 
+				<h3>Machine Learning for Prediction</h3>
+				<p>WIP</p>
+			</div>
+		</section>
+
+		<!-- Calculator -->
+		<section id="calculator" class="three">
+			<div class="container">
+
+				<header>
+					<h2>Calculator</h2>
+				</header>
+
+				WIP
+
+			</div>
+		</section>
+
+		<!-- Conclusion -->
+		<section id="conclusion" class="three">
+			<div class="container">
+
+				<header>
+					<h2>Conclusion</h2>
+				</header>
+
+				WIP
 			</div>
 		</section>
 
@@ -399,7 +433,7 @@
 						<h3>Lanz Conanan, WFW</h3>
 						<img src="images\member_pics\lanz_pic.jpg" alt="justin picture" class="team-member-image">
 						<p>
-							Fourth Year Computer Science Student
+							BS Computer Science student
 						</p>
 						<p>
 							llconanan@up.edu.ph
@@ -413,7 +447,7 @@
 						<h3>Joaquin Heffron, WFW</h3>
 						<img src="images\member_pics\heffron_pic.jpg" alt="justin picture" class="team-member-image">
 						<p>
-							desc
+							BS Computer Science student
 						</p>
 						<p>
 							jsheffron@gmail.com
@@ -424,7 +458,7 @@
 						<h3>Justin Lidasan, WFW</h3>
 						<img src="images\member_pics\justin_pic.jpg" alt="justin picture" class="team-member-image">
 						<p>
-							i ooga on the booga
+							BS Computer Science student
 						</p>
 						<p>
 							jrlidasan@up.edu.ph
