@@ -200,18 +200,25 @@
 					</li>
 				</ul>
 				<p>
-					We used the code of <a href="https://jmbatrina.github.io/CS132-RBC/"
-						style="color: blue; text-decoration: none;">Team R.B.C from the 2023-2024 iteration of CS
-						132</a> to scrape the data from the MERALCO Rates Archive website. This includes data from 2010
-					to 2024.
+					To scrape the data from the MERALCO Rates Archive, we used an automated
+					<a href="https://github.com/jmbatrina/CS132-RBC/blob/main/data/meralco_rates-archives_download.py"
+						style="color: blue; text-decoration: none;">
+						script</a>
+					from
+					<a href="https://jmbatrina.github.io/CS132-RBC/"
+						style="color: blue; text-decoration: none;">
+						MeralCOST</a>
+					, a project in the 2023-2024 iteration of CS 132, by Team R.B.C.
+					This includes data from 2010 to 2024.
 
 				</p>
 
 				<p>
-					Our compiled datasets can be seen in this Google Sheets:
+					Our compiled datasets can be viewed in a Google Sheet linked below:
 				</p>
 				<a href="https://docs.google.com/spreadsheets/d/1fwAkqhLW1Ity1jQuW_FSuACYamU8oPEINvl079Cubdk/edit?usp=sharing"
-					class="button large scrolly">Datasets</a>
+					class="button large scrolly">
+						Datasets</a>
 			</div>
 		</section>
 
@@ -226,17 +233,27 @@
 				<h3>Data Preprocessing</h3>
 
 				<p>
-					Most of the Meralco data has already been cleaned by Team R.B.C, hence we only needed to preprocess
-					the more recent Meralco Rates. We drop unnecessary columns in the dataset and keep the most relevant
-					ones such as the Total Bill per kWh.
+					Most of the Meralco data had already been cleaned by Team R.B.C,
+					hence we only needed to preprocess the more recent Meralco Rates.
+					We dropped unnecessary columns in the dataset and kept the most
+					relevant ones such as the <code>Total Bill per kWh</code>.
 					<br> <br>
-					The NCR Pump Prices data from 2020 to 2023 does not contain the summary information unlike the more
-					recent datasets. Hence we first converted the entire table into a CSV. This will give us the
-					raw data of gas prices from the cities in the NCR. Moreover, some of the weeks in the dataset are
-					missing. Thus we interpolated the missing weeks to ensure that each entry has a gap of no longer
-					than 10 days from the preceding date. Afterwards, we summarized the datas in
-					these CSV files to keep consistent with the summarized data from 2024 and 2025. As some of the
-					common prices in the gas dataset.
+					The NCR Pump Prices data from 2020 to 2023 does not contain the
+					summary information unlike the more recent datasets. Hence we
+					first converted the entire table into a CSV. This gave us the
+					raw data of gas prices from the cities in the NCR. Unfortunately,
+					some of the weeks in the dataset were missing. Thus, we interpolated
+					the missing weeks such that each price entry was within 10 days
+					from each other.
+
+					Afterwards, we summarized the data in these CSV files to keep
+					consistent with the summarized data from 2024 and 2025.
+
+					Finally, we aggregated the entries to be by month in order to
+					be on par with the Meralco rates.
+
+					WIP
+					As some of the common prices in the gas dataset.
 				</p>
 
 				<h3>Data Visualization</h3>
@@ -259,7 +276,7 @@
 					test that compares the medians of two or more groups of data to determine if at least one of the
 					medians are different from the others. In this case, we applied it to the gas prices, meralco rates,
 					and the difference in cost/km from using an avg HEV compared to avg EV. We checked for seasonality
-					by seasons (dry and wet), months, and years.
+					by months, seasons (dry and wet), and years.
 				</p>
 
 			</div>
@@ -294,9 +311,11 @@
 				</p>
 
 				<h3>Hypothesis Test Results</h3>
-				The test shows that the data only yearly seasonality is statistically significant. Hence we fail to
-				reject the first null hypothesis in that the time of the year has a significant effect on the cost
-				difference from using HEV vs EV. However, the yearly seasonality implies… WIP
+				The hypothesis test shows that the data only yearly seasonality
+				is statistically significant. Hence we fail to reject the first
+				null hypothesis in that the time of the year has a significant
+				effect on the cost difference from using HEV vs EV.
+				However, the yearly seasonality implies… WIP
 
 				<table border="1" class="dataframe">
 					<thead>
@@ -380,7 +399,7 @@
 						<h3>Lanz Conanan, WFW</h3>
 						<img src="images\member_pics\lanz_pic.jpg" alt="justin picture" class="team-member-image">
 						<p>
-							desc
+							Fourth Year Computer Science Student
 						</p>
 						<p>
 							llconanan@up.edu.ph
