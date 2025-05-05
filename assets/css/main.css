@@ -2222,18 +2222,22 @@ button:active,
 	margin: 1.75em 1.5em 1.5em 1.5em;
 	min-height: 48px;
 	cursor: default;
+
+	display: flex;
+	flex-direction: column;       /* Stack vertically */
+	align-items: center;          /* Center horizontally */
+	justify-content: center;      /* Center vertically if height increases */
 }
 
 #logo h1 {
-	position: relative;
 	color: #fff;
 	font-weight: 600;
 	font-size: 1em;
 	line-height: 1em;
+	margin: 0.5em 0 0 0;
 }
 
 #logo p {
-	position: relative;
 	display: block;
 	font-size: 0.6em;
 	color: rgba(255, 255, 255, 0.5);
@@ -2242,10 +2246,10 @@ button:active,
 }
 
 #logo .image {
-	position: absolute;
-	left: 0;
-	top: 0;
+	position: relative; /* was absolute — change to flow naturally */
+	margin-bottom: 0.5em; /* optional spacing below avatar */
 }
+
 
 #nav ul {
 	list-style: none;
@@ -2476,11 +2480,6 @@ button:active,
 		width: 20%;
 	}
 
-	#logo .image {
-		position: relative;
-		margin: 0 0 0.5em 0;
-	}
-
 	#nav ul li a {
 		font-size: 0.8em;
 		padding-top: 0.5em;
@@ -2593,10 +2592,6 @@ button:active,
 		padding-top: 2em;
 		margin-top: 2em;
 		position: relative;
-	}
-
-	#logo {
-		margin: 1.5em 1.25em 1.25em 1.25em;
 	}
 
 	#nav ul li a {
