@@ -2224,9 +2224,9 @@ button:active,
 	cursor: default;
 
 	display: flex;
-	flex-direction: column;       /* Stack vertically */
-	align-items: center;          /* Center horizontally */
-	justify-content: center;      /* Center vertically if height increases */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #logo h1 {
@@ -2246,8 +2246,10 @@ button:active,
 }
 
 #logo .image {
-	position: relative; /* was absolute — change to flow naturally */
-	margin-bottom: 0.5em; /* optional spacing below avatar */
+	position: relative;
+	margin-bottom: 0.5em;
+	width: 30%;
+	display: block;
 }
 
 
