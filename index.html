@@ -37,9 +37,6 @@
 					<li><a href="#data" id="data-link"><span class="icon solid fa-list">Data</span></a></li>
 					<li><a href="#methods" id="methods-link"><span class="icon solid fa-pen">Methods</span></a></li>
 					<li><a href="#results" id="results-link"><span class="icon solid fa-car">Results</span></a></li>
-					<li><a href="#calculator" id="calculator-link"><span
-								class="icon solid fa-calculator">Calculator</span></a>
-					</li>
 					<li><a href="#conclusion" id="conclusion-link"><span class="icon solid fa-th">Conclusion</span></a>
 					</li>
 					<li><a href="#meet_the_team" id="meet_the_team-link"><span class="icon solid fa-user">Meet the
@@ -69,7 +66,8 @@
 			<div class="container">
 
 				<header class="centered-heading">
-					<h2 span class="text-with-transparent-background" style="text-decoration: none">Plug In or Pump Up?</h2>
+					<h2 span class="text-with-transparent-background" style="text-decoration: none">Plug In or Pump Up?
+					</h2>
 					<p span class="text-with-transparent-background">Comparing the long term cost efficiency of electric
 						vehicles vs gas vehicles in the context of
 						the Philippines</p>
@@ -285,7 +283,8 @@
 					We used the Kruskal-Wallis Test to check for seasonality of the datasets. This is a non-parametric
 					test that compares the medians of two or more groups of data to determine if at least one of the
 					medians are different from the others. In this case, we applied it to the gas prices, meralco rates,
-					and the difference in cost/km from using an average HEV compared to an average EV. We checked for seasonality
+					and the difference in cost/km from using an average HEV compared to an average EV. We checked for
+					seasonality
 					by months, seasons (dry and wet), and years.
 				</p>
 			</div>
@@ -402,19 +401,25 @@
 				</p>
 
 				<h3>Machine Learning for Prediction</h3>
-				<p>WIP</p>
-			</div>
-		</section>
+				<p>
+					We used Meta's Prophet forecasting model to create the time series forecasts for gas and
+					electricity. For both datasets, we decided to exclude the 2020 to 2022 data as this period's
+					pandemic conditions could skew the results. The Prophet model was initialized with yearly
+					seasonality set to true.
+				</p>
+				<iframe class="graph" src="data/graphs/future_gas.html" frameborder="0"></iframe>
+				<iframe class="graph" src="data/graphs/future_gas_components.html" frameborder="0"></iframe>
+				<p>
+					The
+				</p>
+				<iframe class="graph" src="data/graphs/future_meralco.html" frameborder="0"></iframe>
+				<iframe class="graph" src="data/graphs/future_meralco_components.html" frameborder="0"></iframe>
+				<iframe class="graph" src="data/graphs/future_gas_vs_electricity.html" frameborder="0"></iframe>
 
-		<!-- Calculator -->
-		<section id="calculator" class="three">
-			<div class="container">
-
-				<header>
-					<h2>Calculator</h2>
-				</header>
-
-				WIP
+				To compare overall fuel efficiency, we analyzed the average city driving efficiencies of the top 10 ICE,
+				HEV, and EV cars in the Philippines. We primarily used manufacturer-claimed figures for individual car
+				fuel efficiency, with source details available in our dataset sheets. The following boxplot illustrates
+				the fuel efficiency distribution for each vehicle category.
 
 			</div>
 		</section>
