@@ -426,22 +426,41 @@
 					We used Meta's Prophet forecasting model to create the time series forecasts for gas and
 					electricity. For both datasets, we decided to exclude the 2020 to 2022 data as this period's
 					pandemic conditions could skew the results. The Prophet model was initialized with yearly
-					seasonality set to true.
+					seasonality set to true. We focused on predicting the prices up until the end of 2025.
 				</p>
-				<iframe class="graph" src="data/graphs/future_gas.html" frameborder="0"></iframe>
-				<iframe class="graph" src="data/graphs/future_gas_components.html" frameborder="0"></iframe>
+				<iframe class="graph" src="data/graphs/future_gas.html"></iframe>
+				<iframe class="graph" src="data/graphs/future_gas_components.html"></iframe>
 				<p>
-					The
+					The results from the gas predictions indicates a seasonal dip as January approaches, followed by a
+					climb until June. The overall forecast suggests a downward trend in gas prices from 2022 to the end
+					of 2025.
 				</p>
+				Comparing the results of the regression line from 2020 to 2024 compared to the gas predictions indicates
+				two possible views:
+				<ol>
+					<li>
+						A regression line fitted to our data from 2020 to 2024 indicates an increasing trend.
+					</li>
+					<li>On the other hand, the Prophet forecasting model projects a decreasing trend in gas prices for
+						the
+						period of 2022 to 2025. This difference may suggest a shift in the expected long-term trajectory
+						that the forecasting model is identifying.
+					</li>
+				</ol>
 				<iframe class="graph" src="data/graphs/future_meralco.html" frameborder="0"></iframe>
 				<iframe class="graph" src="data/graphs/future_meralco_components.html" frameborder="0"></iframe>
+				<p>
+					Focusing on the predictions for the Meralco rates, the drop on June 2024 due to the ERC order could
+					have heavily influenced the prediction to assume that another sudden price drop might happen in June
+					2025. Overall it shows that there is an upward trend from 2022 to the end of 2025, with the increase
+					slowing down by July 2023.
+				</p>
+				</ol>
 				<iframe class="graph" src="data/graphs/future_gas_vs_electricity.html" frameborder="0"></iframe>
-
-				To compare overall fuel efficiency, we analyzed the average city driving efficiencies of the top 10 ICE,
-				HEV, and EV cars in the Philippines. We primarily used manufacturer-claimed figures for individual car
-				fuel efficiency, with source details available in our dataset sheets. The following boxplot illustrates
-				the fuel efficiency distribution for each vehicle category.
-
+				<p>
+					Putting the prediction results to the comparison graph for gas vs electricity cost per km, we see
+					that it electricity still remains cheaper up to the end of 2025.
+				</p>
 			</div>
 		</section>
 
